@@ -3,7 +3,8 @@
 --> numpy
 --> Hand Tracking Module
 --> time
---> autopy
+--> pyautogui
+--> mouse
 
 
 2. We have to access the camera....(Must Required) --> May be Webcam or Smartphone(IRIUN WEBCAM)
