@@ -1,2 +1,2 @@
-# AI-MOUSE
-AI mouse is a mouse that helps the user to use a virtual mouse with gesture control. This tech is very benefical for the  Doctors and workers to make their entry on Covid times without touching and attracting with the surface.
+# AI Virtual Mouse
+AI Virtual Mouse is a mouse that helps the user use a virtual mouse with gesture control. This tech is very benefical for the doctors and workers to make data entry during times of Contagious diseases such as COVID-19 without touching and intereacting with the computer surface.
