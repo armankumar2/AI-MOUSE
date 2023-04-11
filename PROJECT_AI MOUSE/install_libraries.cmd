@@ -8,6 +8,7 @@ pip install mediapipe
 pip install numpy
 pip install pyautogui
 pip install autopy
+pip install mouse
 
 
 
