@@ -1,0 +1,58 @@
+idhar baate karo
+ok
+
+bol..
+
+kuch nahi
+
+do sub folder ho gaya hai, ek project ka folder hata de will be like:
+Projects:
+    Helping.txt
+    p1.py
+    install_libaries.cmd
+    live-chat.txt
+    test.txt
+
+to move kr deta hu sb ko projects mein
+
+hmm thik hai ab yep
+
+Hand Tracking module tune banya
+
+kuch maine kiya hai or baaki jaha atak raha tha vo multiple source se likh diya hai
+>>> ek bar run karke dekh agar webcam connnected ho to tera
+>>> or 4 finger dikha raha hai ki nhi dekh lena thora, abhi mai webcam use nahi kr sakta
+>>> bhai maine shirt nahi pehna hai, aisa na ho ki tu waha se run kare or mera webcam chal jaye .... :(
+are nhi mera hi access hoga
+
+but tu mera dekh payegaa kya,,?
+>>> i dont think so...ab
+
+tera run kiya bas camera show ho rha h --> camera dikha ?>>> no> sirf terminal output
+>>>thora inaccurate hai, mostly depend karta hai tere webcam quality pe or tere pc procesing powerpe
+>>> thora aagey piche hil ke dekh, aayega LANDMARKS
+>>> waise ye folder kya sirf tere pc pe store rahega? --> shayad >>>ok
+>>> kuch bhi ek naam bolna github repository bana raha hu --> hmm kr gya work but thumb count nhi ho rha h
+>>> waise thumb finger  hota hai kya?? shayad vo thumb ko finger me count nhi kr rah --> 🤣
+>>> waisr utna matter nahi karta hume to landmark se matter karta hai, thumb use nhi krna
+SLMSEE likh de
+>>> ok
+
+ek baat bta hand tracking module kha se use kiya ?
+white hat jr se half liya --> ohh -- hmm
+>>>arre mai github me commit kaise karu mere pe to folder path hi nahi hai...
+https://github.com/anirban0104/SLSMEE-2022-23 --> gya
+yaha ja
+
+>>> lol ye itna professional jaisa kyu lag raha jabki hum noobs hai
+>>> google headquarters pe shyd aisa project hota hoga --> hmm
+>>> lmao terminal me aag lag gya, lightspeed me update ho raha XD
+
+bro error aa rha h 
+>>> mai khana khane jaa rhaa, kya error?
+>>> apna github username dena to vaha add kar deta hu or sare files update kar dena.A
+>>> aaj ke liye itna sahi rahega... agar tu or kaam karega ispe to karna #AFK
+
+ruk tenserflow download kiya h ?
+>>>shayad nahi hai, karta hu
+>>> mai koi bhi code is folder ka run nhi kr paa rha bol rha "Only files on disk can be run in the terminal"
