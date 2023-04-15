@@ -61,9 +61,10 @@ double_clk_thread = threading.Thread(target=double_clk_delay)
 
 
 
+
 frameR = 100 #Frame Reduction
 smoothning = 5 # It helps to smoothen the hand gesture.
-cap = cv2.VideoCapture(1) # It help to access the main and primary camera
+cap = cv2.VideoCapture(0) # It help to access the main and primary camera
 cap.set(3,W) # It sets the value and adjustment of camera for width
 cap.set(4,H) # It sets the value and adjusment of camera for height
 detector = htm.handDetector(maxHands=1) # it helps to detect the hand max is 1 so 1 hand will be controlled.
@@ -90,6 +91,7 @@ while True : # It starts looping so that camera never ends until and unless the 
 #_____________________________________CHECK WITH FINGERS UP__________________________________
 
         fingers = detector.fingersUp() # Now it helps to detect the fingers
+        Totalfingers = fingers.count(1)
         print(fingers)
 
         #____________________________MAKING BOUNDARY______________________________________
@@ -144,8 +146,8 @@ while True : # It starts looping so that camera never ends until and unless the 
 
         # Double click
         # if Index, thumb and middle is open it act as a double click
-        if fingers[1] == 1 and fingers[2] == 0 and fingers[0] == 1 :
-            if abs(x4-x1) < 25 :
+        if fingers[1] == 1 and fingers[2] == 1 and fingers[0] == 1 :
+            if abs(x1-x2) < 25 :
                 if double_delay == 0 :
                     mouse.double_click(button="left")
                     cv2.putText(IMG, str("DOUBLE CLICK"),(W-490,H-(-40)),cv2.FONT_HERSHEY_PLAIN , 3, (0,0,255),3)
@@ -155,15 +157,22 @@ while True : # It starts looping so that camera never ends until and unless the 
 
         #Scroll
         # if the distance b/w index and middle finger is less than 25 it act as a lower scroll
-        if fingers[1] == 1 and fingers[2] == 1 and fingers[4] == 0 :
-            if abs(x1-x2) < 25 :
+        if fingers[1] == 1 and fingers[2] == 1  :
+            if abs(x1-x2) < 25 and fingers[4] == 0 :
                 mouse.wheel(delta= -1)
                 print("lower scroll")
         # if the distance b/w index and middle finger is less than 25 and pinky finger is open it act as a upper scroll
-        if fingers[1] == 1 and fingers[2] == 1 and fingers[4] == 1:
-            if abs(x1-x2) < 5 :
+        if fingers[1] == 1 and fingers[2] == 1 :
+            if abs(x1-x2) < 25 and fingers[4] == 1 :
                 mouse.wheel(delta= 1)
                 print("upper scroll")
+
+
+        #Drag and for Drop use the left click gesture
+        if Totalfingers == 4 :
+            print("Drag")
+            pyautogui.sleep(1)
+            pyautogui.mouseDown(button="left")
             
             
 
@@ -179,3 +188,5 @@ while True : # It starts looping so that camera never ends until and unless the 
 
     cv2.imshow("AI MOUSE v.2.0", IMG) # It helps to display the heading of software or in simple words name of software.
     cv2.waitKey(1) # This checks the camera and wait until the user response.
+
+  
