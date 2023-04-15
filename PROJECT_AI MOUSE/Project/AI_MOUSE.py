@@ -171,7 +171,7 @@ while True : # It starts looping so that camera never ends until and unless the 
         #Drag and for Drop use the left click gesture
         if Totalfingers == 4 :
             print("Drag")
-            pyautogui.sleep(1)
+            pyautogui.sleep(0.5)
             pyautogui.mouseDown(button="left")
             
             
@@ -187,6 +187,8 @@ while True : # It starts looping so that camera never ends until and unless the 
     #____________________________________________DISPLAY___________________________________________
 
     cv2.imshow("AI MOUSE v.2.0", IMG) # It helps to display the heading of software or in simple words name of software.
-    cv2.waitKey(1) # This checks the camera and wait until the user response.
+    
+    if cv2.waitKey(1) == ord("q"): # This checks the camera and wait until the user response.
+        break 
 
   
