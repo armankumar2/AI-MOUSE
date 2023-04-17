@@ -64,7 +64,7 @@ double_clk_thread = threading.Thread(target=double_clk_delay)
 
 frameR = 100 #Frame Reduction
 smoothning = 5 # It helps to smoothen the hand gesture.
-cap = cv2.VideoCapture(1) # It help to access the main and primary camera
+cap = cv2.VideoCapture(0) # It help to access the main and primary camera
 cap.set(3,W) # It sets the value and adjustment of camera for width
 cap.set(4,H) # It sets the value and adjusment of camera for height
 detector = htm.handDetector(maxHands=1) # it helps to detect the hand max is 1 so 1 hand will be controlled.
