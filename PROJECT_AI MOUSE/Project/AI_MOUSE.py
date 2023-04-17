@@ -16,7 +16,7 @@ clocX , clocY = 0,0 # Current loc
 #______ ><________
 
 W = 640 # Shows the width
-H = 360 # Shows the height
+H = 480 # Shows the height
 
 #_______________________________________LEFT , RIGHT AND DOUBLE CLICK DELAY___________________________________________________
 
@@ -64,7 +64,7 @@ double_clk_thread = threading.Thread(target=double_clk_delay)
 
 frameR = 100 #Frame Reduction
 smoothning = 5 # It helps to smoothen the hand gesture.
-cap = cv2.VideoCapture(0) # It help to access the main and primary camera
+cap = cv2.VideoCapture(1) # It help to access the main and primary camera
 cap.set(3,W) # It sets the value and adjustment of camera for width
 cap.set(4,H) # It sets the value and adjusment of camera for height
 detector = htm.handDetector(maxHands=1) # it helps to detect the hand max is 1 so 1 hand will be controlled.
@@ -76,7 +76,7 @@ while True : # It starts looping so that camera never ends until and unless the 
 #_____________________________________________HAND TRACKING________________________________________
     # IMG = cv2.flip(IMG,1) # It helps to flip the camera so that AI detect the right positions.
     IMG = detector.findHands(IMG) # It detects the hand movement in image I mean real view.
-    lmList,bbox = detector.findPosition(IMG) # It helps to find the position of image I mean real view.
+    lmList,bbox= detector.findPosition(IMG) # It helps to find the position of image I mean real view.
     
 #___________________________________TO GET THE TIP OF INDEX AND MIDDLE FINGER_______________________
 
@@ -85,6 +85,7 @@ while True : # It starts looping so that camera never ends until and unless the 
         x1,y1 = lmList[8][1:]
         x2,y2 = lmList[12][1:]
         x4,y4 = lmList[4][1:]
+
 
         # print(x1,y1,x2,y2)
 
@@ -101,7 +102,7 @@ while True : # It starts looping so that camera never ends until and unless the 
 #_______________________________________ONLY INDEX FINGER_____________________________________
 
         if fingers[1]== 1 and fingers[2] == 0: # It is true only for index finger.
-
+            
             #__________________CONVERT COORDINATES______________________________________
 
             x3 = np.interp(x1, (frameR,W-frameR),(0,wScr)) # It gives the x coordinate of I.F.
@@ -114,7 +115,7 @@ while True : # It starts looping so that camera never ends until and unless the 
 
 
             #____________________________TO MOVE THE MOUSE_____________________________
-
+            
             mouse.move(wScr-clocX,clocY) # It helps to move the cursor
             cv2.circle(IMG, (x1,y1), 15, (255,0,255), cv2.FILLED) # It creates a circle in index finger so that it can be recognisable
             cv2.putText(IMG, str("CURSOR MODE"),(W-490,H-(-40)),cv2.FONT_HERSHEY_PLAIN , 3, (0,0,255),3)
@@ -147,7 +148,7 @@ while True : # It starts looping so that camera never ends until and unless the 
         # Double click
         # if Index, thumb and middle is open it act as a double click
         if fingers[1] == 1 and fingers[2] == 1 and fingers[0] == 1 :
-            if abs(x1-x2) < 25 :
+            if abs(x1-x2) < 40 :
                 if double_delay == 0 :
                     mouse.double_click(button="left")
                     cv2.putText(IMG, str("DOUBLE CLICK"),(W-490,H-(-40)),cv2.FONT_HERSHEY_PLAIN , 3, (0,0,255),3)
@@ -158,12 +159,12 @@ while True : # It starts looping so that camera never ends until and unless the 
         #Scroll
         # if the distance b/w index and middle finger is less than 25 it act as a lower scroll
         if fingers[1] == 1 and fingers[2] == 1  :
-            if abs(x1-x2) < 25 and fingers[4] == 0 :
+            if abs(x1-x2) < 40 and fingers[4] == 0 :
                 mouse.wheel(delta= -1)
                 print("lower scroll")
         # if the distance b/w index and middle finger is less than 25 and pinky finger is open it act as a upper scroll
         if fingers[1] == 1 and fingers[2] == 1 :
-            if abs(x1-x2) < 25 and fingers[4] == 1 :
+            if abs(x1-x2) < 40 and fingers[4] == 1 :
                 mouse.wheel(delta= 1)
                 print("upper scroll")
 
@@ -171,7 +172,7 @@ while True : # It starts looping so that camera never ends until and unless the 
         #Drag and for Drop use the left click gesture
         if Totalfingers == 0 :
             print("Drag")
-            pyautogui.sleep(1)
+            time.sleep(0.5)
             pyautogui.mouseDown(button="left")
 
 
