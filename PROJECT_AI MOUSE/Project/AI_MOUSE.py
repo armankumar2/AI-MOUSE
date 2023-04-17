@@ -67,7 +67,7 @@ smoothning = 5 # It helps to smoothen the hand gesture.
 cap = cv2.VideoCapture(0) # It help to access the main and primary camera
 cap.set(3,W) # It sets the value and adjustment of camera for width
 cap.set(4,H) # It sets the value and adjusment of camera for height
-detector = htm.handDetector(maxHands=1) # it helps to detect the hand max is 1 so 1 hand will be controlled.
+detector = htm.handDetector(maxHands=1,detectionCon=0.8) # it helps to detect the hand max is 1 so 1 hand will be controlled.
 wScr,hScr = pyautogui.size() # It gives the width and height of the system(Lappy,Comp.) screen.
 # print(wScr,hScr)
 while True : # It starts looping so that camera never ends until and unless the user destroy the whole window.
