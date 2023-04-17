@@ -42,7 +42,7 @@ root.geometry(f'200x200+{int(x+120)}+{int(y-50)}')
 #root.geometry(f'200x200+{int(x)}+{int(y)}')
 root.attributes('-alpha', 0.0) # Set the initial opacity to 0.0
 
-image = tk.PhotoImage(file="PROJECT_AI_MOUSE\\Splash_Screen\\logo.png")
+image = tk.PhotoImage(file="Splash_Screen\\logo.png")
 label = tk.Label(root, image=image, bg="#4a4a4a")
 label.pack(fill="both", expand=True)
 
