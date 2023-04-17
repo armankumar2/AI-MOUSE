@@ -4,3 +4,4 @@ pip install pyautogui
 pip install mouse
 pip install cvzone
 pip install mediapipe
+pip install pycaw
