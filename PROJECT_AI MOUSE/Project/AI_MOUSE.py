@@ -127,9 +127,9 @@ try :
 
     #__________________________________IT TAKES CONTROL OVER VOLUME___________________________________________
 
-            vol = np.interp(lengthVol, [50,200],[minVol,maxVol]) # It gives an array for volume control
+            vol = np.interp(lengthVol, [50,250],[minVol,maxVol]) # It gives an array for volume control
 
-            smoothness = 10 # It helps to smoothen the values for volume.
+            smoothness = 5 # It helps to smoothen the values for volume.
             vol = smoothness * (round(vol/smoothness)) # It give the volume.
 
     #___________________________________________________________________________________________________________
@@ -230,7 +230,7 @@ try :
 
             # Volume Control
             if fingers[2] == 0 and fingers[1] == 0 and fingers[0] == 1 : 
-                if not fingers[3]:
+                if not fingers[1]:
                     print(f"Volume Change : {int(vol)}")
                     volume.SetMasterVolumeLevel(vol,None)
 
